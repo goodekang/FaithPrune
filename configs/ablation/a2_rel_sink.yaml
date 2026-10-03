@@ -1,0 +1,9 @@
+# Table VIII, row 2: + sink exclusion.
+run_name: abl_rel_sink
+method:
+  selector: sr2s
+  sink_mode: exclude
+  use_alignment: false
+  use_coverage: false
+  vamr:
+    enabled: false

@@ -1,0 +1,8 @@
+# Table VIII / Table S-I: restoration target including the sink mass,
+# m* = P^V / (P^V + P^T) (over-amplification).
+run_name: abl_target_with_sink
+calibration:
+  target: with_sink
+method:
+  vamr:
+    gamma_file: outputs/calibration/llava-1.5-7b_K64_target_with_sink.json

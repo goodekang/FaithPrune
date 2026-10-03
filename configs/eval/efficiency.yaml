@@ -1,0 +1,13 @@
+# Efficiency (Table V): one A100-80GB, FP16, PyTorch SDPA, batch size 1,
+# averaged over 200 samples. Use model.attn_impl=folded to measure the
+# FlashAttention-2 form of VAMR.
+model:
+  dtype: float16
+  attn_impl: sdpa
+
+eval:
+  benchmark: efficiency
+  extra:
+    image_dir: data/coco/val2014
+    image_list: data/chair/chair_500_images.txt
+    prompt: "Please describe this image in detail."

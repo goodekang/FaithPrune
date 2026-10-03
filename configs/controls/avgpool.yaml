@@ -1,0 +1,9 @@
+# Table S-III: 2D average pooling of the visual tokens to 8 x 8 before the
+# decoder; each pooled token inherits the RoPE index of the window center.
+run_name: avgpool
+method:
+  selector: avgpool
+  scoring_layer: 0
+  sink_layer: 2
+  vamr:
+    enabled: false

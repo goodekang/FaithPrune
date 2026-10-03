@@ -1,0 +1,15 @@
+# Table S-III: SR^2S tokens + amplification-only bias (image-attention logits
+# z <- z + alpha |z| as in PAI). alpha is tuned on the held-out split
+# (configs/eval/chair_heldout.yaml); 0.5 is the PAI default for LLaVA-1.5.
+run_name: sr2s_amplify_only
+model:
+  attn_impl: eager
+method:
+  vamr:
+    enabled: false
+  amplify:
+    enabled: true
+    alpha: 0.5
+    start_layer: 2
+    end_layer: 32
+    last_row_only: true

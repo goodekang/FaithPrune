@@ -1,0 +1,10 @@
+# Attention statistics of Sec. III and Sec. V-H on 200 COCO images
+# (LLaVA-1.5-7B, K = 64).
+eval:
+  benchmark: analysis
+  extra:
+    image_dir: data/coco/val2014
+    image_list: data/chair/chair_500_images.txt
+    instances_file: data/coco/annotations/instances_val2014.json
+    prompt: "Please describe this image in detail."
+    mass_layers: [4, 16, 28]

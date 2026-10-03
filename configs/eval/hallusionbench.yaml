@@ -1,0 +1,10 @@
+# HallusionBench question-level accuracy (aAcc).
+decoding:
+  strategy: greedy
+  max_new_tokens: 64
+
+eval:
+  benchmark: hallusionbench
+  extra:
+    question_file: data/hallusionbench/HallusionBench.json
+    image_root: data/hallusionbench

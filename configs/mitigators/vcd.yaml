@@ -1,0 +1,8 @@
+# Table IV: VCD (contrast with a diffusion-noised image, 500 noise steps,
+# alpha = 1, adaptive plausibility beta = 0.1) on top of the token set; the
+# noised image goes through the same pruning pipeline.
+decoding:
+  mitigator: vcd
+  vcd_alpha: 1.0
+  vcd_beta: 0.1
+  vcd_noise_step: 500

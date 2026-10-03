@@ -1,0 +1,12 @@
+# LLaVA-NeXT-7B (AnyRes, up to 2880 visual tokens). The budget is set per
+# retention ratio rho = 11.1% of the visual tokens of each image, and gamma_l
+# is calibrated per ratio.
+model:
+  name: llava-next-7b
+  adapter: llava_next
+  path: llava-hf/llava-v1.6-vicuna-7b-hf
+  dtype: float16
+  conv_template: llava_v1
+
+method:
+  budget_ratio: 0.111

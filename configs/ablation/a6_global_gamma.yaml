@@ -1,0 +1,6 @@
+# Table VIII: one global gamma (mean of the calibrated gamma_l) instead of
+# the layer-wise gamma_l.
+run_name: abl_global_gamma
+method:
+  vamr:
+    global_gamma: true

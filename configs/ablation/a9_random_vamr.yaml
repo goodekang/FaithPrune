@@ -1,0 +1,6 @@
+# Table VIII: random selection of K tokens at l_s + VAMR.
+run_name: abl_random_vamr
+method:
+  selector: random
+  vamr:
+    gamma_file: outputs/calibration/llava-1.5-7b_K64_random.json

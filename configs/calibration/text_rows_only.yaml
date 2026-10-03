@@ -1,0 +1,6 @@
+# Table S-I: bias applied only to text-query rows (instruction and generated).
+run_name: calib_text_rows
+method:
+  vamr:
+    rows: text
+    gamma_file: outputs/calibration/llava-1.5-7b_K64_text_rows.json

@@ -1,0 +1,9 @@
+# Table VIII, row 3: + language-alignment score.
+run_name: abl_rel_sink_align
+method:
+  selector: sr2s
+  sink_mode: exclude
+  use_alignment: true
+  use_coverage: false
+  vamr:
+    enabled: false

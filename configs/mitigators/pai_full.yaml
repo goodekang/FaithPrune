@@ -1,0 +1,15 @@
+# Table IV: PAI on the full model / DivPrune: image-attention amplification
+# (alpha = 0.5, layers 2-31) plus the contrast with an image-free pass
+# (gamma = 1.1).
+model:
+  attn_impl: eager
+method:
+  amplify:
+    enabled: true
+    alpha: 0.5
+    start_layer: 2
+    end_layer: 32
+    last_row_only: true
+decoding:
+  mitigator: pai
+  pai_gamma: 1.1

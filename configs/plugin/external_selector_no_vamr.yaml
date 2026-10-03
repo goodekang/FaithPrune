@@ -1,0 +1,6 @@
+# Table IX, "w/o VAMR" columns for the external selectors.
+_base_: external_selector.yaml
+run_name: plugin_external_no_vamr
+method:
+  vamr:
+    enabled: false

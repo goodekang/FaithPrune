@@ -1,0 +1,8 @@
+# Multinomial sampling (supplementary Table S-II): temperature 1.0, no top-p
+# or top-k truncation, three seeds (passed with --seeds 0 1 2 to run_chair.py;
+# POPE is run once per seed with decoding.seed=<s>).
+decoding:
+  strategy: sample
+  temperature: 1.0
+  top_p: null
+  top_k: null

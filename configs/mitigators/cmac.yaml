@@ -1,0 +1,5 @@
+# Table IV: CMAC is run with its official implementation on the token sets
+# exported by scripts/export_selection.py (and the gamma_l table of the same
+# budget). This file only records the setting used there.
+decoding:
+  mitigator: cmac

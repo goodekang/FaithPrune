@@ -1,0 +1,6 @@
+# FaithPrune with the kernel-compatible form of VAMR: a constant sqrt(d_h)
+# coordinate is appended to every query and gamma_l * 1[i in S] to every key,
+# so FlashAttention-2 can be used without bias support.
+_base_: faithprune.yaml
+model:
+  attn_impl: folded

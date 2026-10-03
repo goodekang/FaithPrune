@@ -1,0 +1,9 @@
+# Table S-I: VQA-style (GQA) prompts for calibration instead of captioning
+# prompts; image/question pairs from the held-out GQA split.
+run_name: calib_gqa_prompts
+calibration:
+  image_dir: data/gqa/images
+  prompt_file: data/splits/heldout_gqa_balanced_val_1000.jsonl
+method:
+  vamr:
+    gamma_file: outputs/calibration/llava-1.5-7b_K64_gqa_prompts.json

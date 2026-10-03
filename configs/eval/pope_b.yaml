@@ -1,0 +1,17 @@
+# POPE Protocol B (CMAC / PAI / OPERA evaluation code): 3,000 questions per
+# split, "Is there a {object} in the image?", no answer-format suffix, greedy
+# decoding with a 16-token limit, keyword parsing ("no" takes precedence).
+decoding:
+  strategy: greedy
+  max_new_tokens: 16
+
+eval:
+  benchmark: pope
+  protocol: B
+  extra:
+    image_dir: data/coco/val2014
+    splits: [random, popular, adversarial]
+    question_files:
+      random: data/pope/coco/coco_pope_random.json
+      popular: data/pope/coco/coco_pope_popular.json
+      adversarial: data/pope/coco/coco_pope_adversarial.json

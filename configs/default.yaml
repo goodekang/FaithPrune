@@ -1,0 +1,66 @@
+# FaithPrune default configuration (Sec. V-A, "Implementation details").
+# Hyper-parameters are selected on the held-out split and fixed across
+# models, budgets and benchmarks.
+run_name: faithprune_llava15_K64
+
+model:
+  name: llava-1.5-7b
+  adapter: llava
+  path: llava-hf/llava-1.5-7b-hf
+  dtype: float16
+  device: cuda
+  attn_impl: sdpa            # VAMR bias folded into the additive SDPA mask
+  conv_template: llava_v1
+
+method:
+  enabled: true
+  budget: 64                 # K
+  scoring_layer: 2           # l_s
+  sink_layer: null           # = l_s
+  tau: 3.0                   # sink threshold on the norm ratio eta_i
+  beta: 0.3                  # relevance / alignment balance
+  lam: 0.5                   # weight of the facility-location coverage term
+  sigma: 0.15                # spatial bandwidth of the kernel
+  num_centroids: 256         # C
+  centroids_file: null       # default: outputs/centroids/<model>_C256.pt
+  selector: sr2s
+  sink_mode: exclude
+  use_relevance: true
+  use_alignment: true
+  use_coverage: true
+  kernel: feature_position
+  vamr:
+    enabled: true
+    gamma_file: null         # default: outputs/calibration/<model>_K<K>_ls<l_s>_sr2s.json
+    rows: all
+    global_gamma: false
+    scale: 1.0
+  amplify:
+    enabled: false
+  seed: 0
+
+calibration:
+  num_images: 64             # N_cal
+  image_dir: data/coco/train2014
+  image_list: data/splits/calib_coco_train2014_64.txt
+  prompts:                   # generic captioning prompts, cycled over the images
+    - "Please describe this image in detail."
+    - "Describe this image."
+    - "What is shown in this image? Describe it in detail."
+    - "Provide a detailed description of the given image."
+  max_new_tokens: 512
+  statistic: median
+  sequential: true
+  target: non_sink
+  headwise: false
+
+decoding:
+  strategy: greedy
+  max_new_tokens: 512
+  temperature: 1.0
+  seed: 0
+  mitigator: none
+
+eval:
+  data_root: data
+  output_dir: outputs

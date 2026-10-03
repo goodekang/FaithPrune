@@ -1,0 +1,7 @@
+# Table VIII, row 1 (corresponds to FastV): top-K by raw instruction relevance
+# at l_s = 2, sinks included, no alignment, no coverage, no VAMR.
+run_name: abl_rel
+method:
+  selector: topk_relevance
+  vamr:
+    enabled: false

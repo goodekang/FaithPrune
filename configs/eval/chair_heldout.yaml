@@ -1,0 +1,9 @@
+# Held-out CHAIR split for hyper-parameter selection: 500 COCO train2014
+# images disjoint from the calibration images.
+_base_: chair.yaml
+eval:
+  extra:
+    image_dir: data/coco/train2014
+    image_list: data/splits/heldout_chair_coco_train2014_500.txt
+    instances_file: data/coco/annotations/instances_train2014.json
+    captions_file: data/coco/annotations/captions_train2014.json

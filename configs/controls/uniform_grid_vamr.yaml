@@ -1,0 +1,6 @@
+_base_: uniform_grid.yaml
+run_name: uniform_grid_vamr
+method:
+  vamr:
+    enabled: true
+    gamma_file: outputs/calibration/llava-1.5-7b_K64_uniform_grid.json

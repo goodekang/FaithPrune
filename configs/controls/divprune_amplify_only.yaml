@@ -1,0 +1,13 @@
+# Table S-III: DivPrune tokens (official code, exported indices) +
+# amplification-only bias.
+_base_: ../plugin/external_selector_no_vamr.yaml
+run_name: divprune_amplify_only
+model:
+  attn_impl: eager
+method:
+  amplify:
+    enabled: true
+    alpha: 0.5
+    start_layer: 2
+    end_layer: 32
+    last_row_only: true

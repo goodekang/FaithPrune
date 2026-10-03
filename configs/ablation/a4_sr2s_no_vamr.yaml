@@ -1,0 +1,6 @@
+# Table VIII, row 4 / Table II "w/o VAMR": full SR^2S without VAMR.
+run_name: abl_sr2s_no_vamr
+method:
+  selector: sr2s
+  vamr:
+    enabled: false

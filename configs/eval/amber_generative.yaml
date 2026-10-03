@@ -1,0 +1,17 @@
+# AMBER generative track: CHAIR, Cover, Hal, Cog.
+decoding:
+  strategy: greedy
+  max_new_tokens: 512
+
+eval:
+  benchmark: amber
+  extra:
+    track: generative
+    image_dir: data/amber/image
+    query_file:
+      generative: data/amber/data/query/query_generative.json
+      discriminative: data/amber/data/query/query_discriminative.json
+    annotation_file: data/amber/data/annotations.json
+    association_file: data/amber/data/relation.json
+    safe_words_file: data/amber/data/safe_words.txt
+    similarity_threshold: 0.8

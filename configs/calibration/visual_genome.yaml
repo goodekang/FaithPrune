@@ -1,0 +1,8 @@
+# Table S-I: non-COCO calibration images (Visual Genome).
+run_name: calib_visual_genome
+calibration:
+  image_dir: data/visual_genome/images
+  image_list: data/splits/calib_vg_64.txt
+method:
+  vamr:
+    gamma_file: outputs/calibration/llava-1.5-7b_K64_visual_genome.json

@@ -1,0 +1,10 @@
+# Table II "w/o SR^2S": FastV scores (raw relevance, sinks included, no
+# alignment) with coverage-constrained selection and VAMR.
+run_name: abl_without_sr2s
+method:
+  selector: sr2s
+  sink_mode: keep
+  use_alignment: false
+  use_coverage: true
+  vamr:
+    gamma_file: outputs/calibration/llava-1.5-7b_K64_without_sr2s.json

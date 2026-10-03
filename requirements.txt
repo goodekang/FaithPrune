@@ -1,0 +1,14 @@
+torch>=2.3
+transformers==4.51.3
+accelerate>=0.30
+pillow>=10.0
+numpy>=1.24
+scipy>=1.10
+pyyaml>=6.0
+tqdm>=4.66
+nltk>=3.8
+spacy>=3.7            # AMBER similarity matching (python -m spacy download en_core_web_lg)
+lmms-eval>=0.3        # Protocol A general benchmarks
+qwen-vl-utils>=0.0.8
+# optional: FlashAttention-2 for the folded VAMR form (model.attn_impl=folded)
+# flash-attn>=2.5

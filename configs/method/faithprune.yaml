@@ -1,0 +1,14 @@
+# FaithPrune = SR^2S + VAMR (defaults of configs/default.yaml). Budgets used
+# in the paper: K in {192, 128, 64} (main tables) and {288, 192, 128, 96, 64,
+# 32} (supplementary budget sweep); set with --set method.budget=<K>. Each
+# budget needs its own calibrated gamma_l.
+method:
+  enabled: true
+  selector: sr2s
+  sink_mode: exclude
+  use_relevance: true
+  use_alignment: true
+  use_coverage: true
+  kernel: feature_position
+  vamr:
+    enabled: true

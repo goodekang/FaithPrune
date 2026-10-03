@@ -1,0 +1,7 @@
+# AMBER discriminative existence / attribute / relation F1 (supplementary Table S-V).
+_base_: amber_generative.yaml
+decoding:
+  max_new_tokens: 16
+eval:
+  extra:
+    track: discriminative

@@ -1,0 +1,8 @@
+# Table S-I: all gamma_l estimated from one pruned pass without applying the
+# biases progressively.
+run_name: calib_non_sequential
+calibration:
+  sequential: false
+method:
+  vamr:
+    gamma_file: outputs/calibration/llava-1.5-7b_K64_non_sequential.json

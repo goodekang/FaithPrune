@@ -1,0 +1,7 @@
+# Table S-I: head-wise gamma_{l,h} (median per head).
+run_name: calib_headwise
+calibration:
+  headwise: true
+method:
+  vamr:
+    gamma_file: outputs/calibration/llava-1.5-7b_K64_headwise.json

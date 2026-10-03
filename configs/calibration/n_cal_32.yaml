@@ -1,0 +1,7 @@
+# Sec. V-G: stability of gamma_l with N_cal = 32 calibration images.
+run_name: calib_ncal32
+calibration:
+  num_images: 32
+method:
+  vamr:
+    gamma_file: outputs/calibration/llava-1.5-7b_K64_ncal32.json

@@ -1,0 +1,8 @@
+# Table IX: unpruned model with the gamma_l calibrated for K = 64 applied to
+# all visual keys of layers l_s+1..L.
+run_name: full_with_gamma_k64
+method:
+  enabled: false
+  vamr:
+    enabled: true
+    gamma_file: outputs/calibration/llava-1.5-7b_K64_ls2_sr2s.json

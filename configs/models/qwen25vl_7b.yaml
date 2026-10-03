@@ -1,0 +1,10 @@
+# Qwen2.5-VL-7B-Instruct. Following RESTORE, images are resized so that the
+# full model uses 576 visual tokens (672 x 672 -> 24 x 24 merged tokens).
+# tau = 3 transfers directly.
+model:
+  name: qwen2.5-vl-7b
+  adapter: qwen2_5_vl
+  path: Qwen/Qwen2.5-VL-7B-Instruct
+  dtype: bfloat16
+  conv_template: qwen2_vl
+  image_size: [672, 672]

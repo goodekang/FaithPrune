@@ -1,0 +1,8 @@
+# Table IV: PAI combined with FaithPrune keeps only the contrastive term,
+# since its amplification overlaps with VAMR.
+method:
+  amplify:
+    enabled: false
+decoding:
+  mitigator: pai
+  pai_gamma: 1.1

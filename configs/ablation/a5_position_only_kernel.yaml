@@ -1,0 +1,7 @@
+# Table VIII: position-only kernel (no feature term); gamma_l re-calibrated
+# on the resulting token sets.
+run_name: abl_position_kernel
+method:
+  kernel: position_only
+  vamr:
+    gamma_file: outputs/calibration/llava-1.5-7b_K64_position_only.json

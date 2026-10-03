@@ -1,0 +1,9 @@
+# POPE built on A-OKVQA images (supplementary Table S-V), Protocol B.
+_base_: pope_b.yaml
+eval:
+  extra:
+    image_dir: data/coco/val2014
+    question_files:
+      random: data/pope/aokvqa/aokvqa_pope_random.json
+      popular: data/pope/aokvqa/aokvqa_pope_popular.json
+      adversarial: data/pope/aokvqa/aokvqa_pope_adversarial.json

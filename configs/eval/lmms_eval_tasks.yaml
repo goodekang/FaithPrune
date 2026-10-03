@@ -1,0 +1,8 @@
+# Protocol A: lmms-eval tasks of the general benchmarks (Tables I, VI, VII),
+# following RESTORE. POPE uses all 8,910 COCO questions with the suffix
+# "Answer the question using a single word or phrase."; SEED-Bench uses its
+# full question set. Read by scripts/sh/general_benchmarks.sh.
+tasks:
+  llava-1.5-7b: [gqa, mmbench_en_dev, mme, pope, scienceqa_img, vqav2_val, textvqa_val, seedbench]
+  qwen2.5-vl-7b: [mmbench_en_dev, mme, pope, scienceqa_img, textvqa_val]
+  llava-next-7b: [gqa, mmbench_en_dev, pope, textvqa_val]

@@ -1,0 +1,15 @@
+# Table IX: VAMR as a plug-in for encoder-side selectors (VisionZip, DivPrune,
+# HoloV). Their token indices are produced with the official code and stored
+# as {sample_id: [indices]}; the decoder then runs with l_s = 0 and
+# gamma_1..gamma_L calibrated with the same procedure. Sinks for the target
+# m* are identified at layer 2 of the full pass.
+# Usage: --set run_name=divprune_vamr method.external_selection_file=outputs/selections/divprune_K64.json
+#        method.vamr.gamma_file=outputs/calibration/llava-1.5-7b_K64_divprune.json
+run_name: plugin_external
+method:
+  selector: external
+  scoring_layer: 0
+  sink_layer: 2
+  external_selection_file: null
+  vamr:
+    enabled: true

@@ -1,0 +1,9 @@
+# Table IX: full model with only the 2-4 sinks removed (K = N_v - |Sigma|).
+# Calibrating on this configuration gives a negative unclamped median at
+# every layer, so the clamped gamma_l are zero.
+run_name: full_sinks_removed
+method:
+  selector: drop_sinks
+  vamr:
+    enabled: true
+    gamma_file: outputs/calibration/llava-1.5-7b_sinks_removed.json

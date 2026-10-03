@@ -1,0 +1,7 @@
+# LLaVA-1.5-7B, 576 visual tokens (24 x 24)
+model:
+  name: llava-1.5-7b
+  adapter: llava
+  path: llava-hf/llava-1.5-7b-hf
+  dtype: float16
+  conv_template: llava_v1

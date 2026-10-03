@@ -1,0 +1,46 @@
+# Comparisons of supplementary Table S-IV (1,000 paired bootstrap resamples).
+# a / b are run directories written by the evaluation scripts
+# (outputs/<run_name>) or lmms-eval --output_path directories.
+# "reference" is the full-model score used for the relative average.
+# lmms-eval "field" names are the per-sample keys of the installed lmms-eval
+# version's --log_samples output.
+comparisons:
+  - name: FaithPrune - HoloV+RESTORE, Avg. (8 benchmarks), K=64
+    kind: average
+    a: outputs/lmms_eval/faithprune_K64
+    b: outputs/lmms_eval/holov_restore_K64
+    benchmarks:
+      - {task: gqa, field: exact_match, reference: 61.9}
+      - {task: mmbench_en_dev, field: gpt_eval_score, reference: 64.6}
+      - {task: mme, field: mme_percetion_score, scale: 1.0, reference: 1862}
+      - {task: pope, field: pope_f1_score, reference: 85.9}
+      - {task: scienceqa_img, field: exact_match, reference: 69.5}
+      - {task: vqav2_val, field: exact_match, reference: 78.5}
+      - {task: textvqa_val, field: exact_match, reference: 58.2}
+      - {task: seedbench, field: seed_all, reference: 58.6}
+  - {name: FaithPrune - HoloV+RESTORE, kind: chair, metric: CHAIR_s,
+     a: outputs/faithprune_llava15_K64, b: outputs/holov_restore_K64}
+  - {name: FaithPrune - HoloV+RESTORE, kind: chair, metric: CHAIR_i,
+     a: outputs/faithprune_llava15_K64, b: outputs/holov_restore_K64}
+  - {name: FaithPrune - HoloV+RESTORE, kind: pope_b, split: adversarial,
+     a: outputs/faithprune_llava15_K64, b: outputs/holov_restore_K64}
+  - {name: FaithPrune - Full, CHAIR_s K=128, kind: chair, metric: CHAIR_s,
+     a: outputs/faithprune_llava15_K128, b: outputs/full}
+  - {name: FaithPrune - Full, CHAIR_s K=64, kind: chair, metric: CHAIR_s,
+     a: outputs/faithprune_llava15_K64, b: outputs/full}
+  - {name: FaithPrune - Full, CHAIR_i K=64, kind: chair, metric: CHAIR_i,
+     a: outputs/faithprune_llava15_K64, b: outputs/full}
+  - {name: FaithPrune - Full, AMBER Hal K=64, kind: amber, metric: Hal,
+     a: outputs/faithprune_llava15_K64, b: outputs/full}
+  - {name: FaithPrune - Full, AMBER Cover K=64, kind: amber, metric: Cover,
+     a: outputs/faithprune_llava15_K64, b: outputs/full}
+  - {name: FaithPrune - Full, HallusionBench (Qwen2.5-VL) K=64, kind: hallusionbench,
+     a: outputs/faithprune_qwen25vl_K64, b: outputs/full_qwen25vl}
+  - {name: w/ VAMR - w/o VAMR, kind: chair, metric: CHAIR_s,
+     a: outputs/faithprune_llava15_K64, b: outputs/abl_sr2s_no_vamr}
+  - {name: VAMR - amplification only (on SR2S), kind: chair, metric: CHAIR_s,
+     a: outputs/faithprune_llava15_K64, b: outputs/sr2s_amplify_only}
+  - {name: Position-only kernel - default, kind: chair, metric: CHAIR_s,
+     a: outputs/abl_position_kernel, b: outputs/faithprune_llava15_K64}
+  - {name: Global gamma - layer-wise gamma, kind: chair, metric: CHAIR_s,
+     a: outputs/abl_global_gamma, b: outputs/faithprune_llava15_K64}

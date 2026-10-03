@@ -1,0 +1,6 @@
+# Unpruned model (576 visual tokens), no bias.
+run_name: full
+method:
+  enabled: false
+  vamr:
+    enabled: false

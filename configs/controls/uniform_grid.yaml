@@ -1,0 +1,8 @@
+# Table S-III: uniform 8 x 8 grid of the 24 x 24 tokens (encoder side).
+run_name: uniform_grid
+method:
+  selector: uniform_grid
+  scoring_layer: 0
+  sink_layer: 2
+  vamr:
+    enabled: false

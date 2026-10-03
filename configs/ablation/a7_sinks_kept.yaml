@@ -1,0 +1,6 @@
+# Table VIII: sinks kept as candidates, only their relevance set to zero.
+run_name: abl_sinks_kept
+method:
+  sink_mode: zero_relevance
+  vamr:
+    gamma_file: outputs/calibration/llava-1.5-7b_K64_sinks_kept.json

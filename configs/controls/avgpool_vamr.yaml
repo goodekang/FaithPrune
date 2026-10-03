@@ -1,0 +1,6 @@
+_base_: avgpool.yaml
+run_name: avgpool_vamr
+method:
+  vamr:
+    enabled: true
+    gamma_file: outputs/calibration/llava-1.5-7b_K64_avgpool.json

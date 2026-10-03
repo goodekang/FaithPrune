@@ -1,0 +1,8 @@
+# Table S-I: solve E[m~_q(gamma_l)] = E[m*_q] instead of the median of the
+# per-query closed form.
+run_name: calib_mean_matching
+calibration:
+  statistic: mean_matching
+method:
+  vamr:
+    gamma_file: outputs/calibration/llava-1.5-7b_K64_mean_matching.json
